@@ -12,11 +12,4 @@ public class DummyBot {
         }
         return rsl;
     }
-
-    public static void main(String[] args){
-        String result=answer("Привет, Бот");
-        String result2=answer("Пока.");
-        String result3=answer("2+2");
-    }
-
 }
