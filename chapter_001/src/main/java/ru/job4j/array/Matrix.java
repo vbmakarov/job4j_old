@@ -14,23 +14,15 @@ public class Matrix {
 
     public static boolean isWin(char[][] board) {
         boolean result = false;
-        int indexH=0, indexG=0;
         boolean init=false;
         for (int i=0;i<board.length;i++) {
-            for(int j=0;j<board.length;j++) {
-                if (board[i][j]=='X') {
-                    indexH=j;
-                    indexG=i;
-                    init=true;
+                if (monoHorizontal(board, i) || monoVertical(board, i)) {
+                    result=true;
                     break;
+                }else{
+                    result=false;
                 }
-            }
-            if(init){
-                break;
-            }
-        }
-        if(monoHorizontal(board, indexG) || monoVertical(board, indexH)){
-            result=true;
+
         }
 
         return result;
@@ -38,13 +30,8 @@ public class Matrix {
     public static boolean monoVertical(char[][] board, int index){
         boolean result=false;
         for(int i=0;i<board.length;i++){
-            if(board[i][index]=='X'){
-                result=true;
-            }
-            else{
-                result=false;
-                break;
-            }
+            result= board[index][i] == 'X';
+            break;
         }
         return result;
     }
@@ -52,13 +39,8 @@ public class Matrix {
     public static boolean monoHorizontal(char[][] board, int index){
         boolean result=false;
         for(int i=0;i<board.length;i++){
-            if(board[index][i]=='X'){
-                result=true;
-            }
-            else{
-                result=false;
-                break;
-            }
+            result= board[index][i] == 'X';
+            break;
         }
         return result;
     }
