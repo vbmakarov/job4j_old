@@ -26,10 +26,13 @@ public class Matrix {
     public static boolean monoVertical(char[][] board, int index){
         boolean result=true;
         for(int i=0;i<board.length;i++){
-            if (board[i][index] == 'X') {
-                continue;
+            if (board[i][index] != 'X') {
+
+                result = false;
+
+                break;
+
             }
-            result=false;
         }
         return result;
     }
@@ -37,10 +40,13 @@ public class Matrix {
     public static boolean monoHorizontal(char[][] board, int index){
         boolean result=true;
         for(int i=0;i<board.length;i++){
-            if (board[index][i] == 'X') {
-                continue;
+            if (board[index][i] != 'X') {
+
+                result = false;
+
+                break;
+
             }
-            result=false;
         }
         return result;
     }
