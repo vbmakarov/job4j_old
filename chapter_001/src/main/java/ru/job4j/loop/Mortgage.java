@@ -5,17 +5,17 @@ public class Mortgage {
         int year = 0;
 
         // вычисляем сумму которую нам нужно выплатить с учеттом проценной ставки
-        double credit=amount+amount*(percent/100);
+        double credit = amount + amount * (percent / 100);
 
         //остаток по кредиту с учетом процентной ставки
         double balance;
 
-        do{
-            balance=credit-salary;
-            credit=balance*(percent/100)+balance;
+        do {
+            balance = credit - salary;
+            credit = balance * (percent / 100) + balance;
             year++;
         }
-        while(credit>0);
+        while (credit > 0);
         return year;
     }
 }
