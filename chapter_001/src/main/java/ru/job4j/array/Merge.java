@@ -29,7 +29,7 @@ public class Merge {
                     rsl[res]=left[onePt];
                     res++;
                     onePt++;
-                }else if(left[onePt]<=right[twoPt] && onePt<left.length){
+                }else if(left[onePt]<=right[twoPt]){
                     rsl[res]=left[onePt];
                     onePt++;
                     res++;
@@ -52,61 +52,5 @@ public class Merge {
             System.out.println(Arrays.toString(rsl));
         }
     }
-        /*if(left.length==0) {
-            for (int j = 0; j < right.length; j++) {
-                rsl[i] = right[j];
-                i++;
-            }
-        }else if(right.length==0) {
-            for (int j = 0; j < left.length; j++) {
-                rsl[j] = left[j];
-                i++;
-            }
-        } else if (left[i] < right[i]) {
-            for (int j = 0; j < left.length; j++) {
-                rsl[j] = left[j];
-                i++;
-            }
-            for(int j=0;j<right.length;j++){
-                rsl[i]=right[j];
-                i++;
-            }
-
-        } else if(left[i] > right[i]) {
-            for (int j = 0; j < right.length; j++) {
-                rsl[j] = right[j];
-                i++;
-            }
-            for(int j=0;j<left.length;j++){
-                rsl[i]=left[j];
-                i++;
-            }
-        }
-            return rsl;
-
-    }*/
-
-         /*while (i < right.length) {
-                if (left[i] < right[i]) {
-                    rsl[i] = left[i];
-                    i++;
-                }
-                int j = 0;
-                while (j < left.length) {
-                    if (left[i] <= right[j]) {
-                        rsl[i] = left[i];
-                        i++;
-                    }
-                }
-                for(;i < rsl.length;){
-                    for(int z=0; z<right.length;z++){
-                        if(right[z]>rsl[i]){
-                            rsl[i]=right[z];
-                            z++;
-                            i++;
-                        }
-                    }
-                }
-            }*/
 
 
