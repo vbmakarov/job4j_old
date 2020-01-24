@@ -8,37 +8,20 @@ public class Merge {
         int[] rsl = new int[left.length + right.length];
         int onePt = 0;
         int twoPt = 0;
-        int res = 0;
-        if (left.length == 0) {
-            while (onePt< right.length) {
-                rsl[onePt] = right[onePt];
-                onePt++;
-            }
-        } else if (right.length == 0) {
-            while (twoPt < left.length) {
-                rsl[twoPt] = left[twoPt];
-                twoPt++;
-            }
-        } else {
-            while(res<rsl.length){
-                if(onePt==left.length){
-                    rsl[res]=right[twoPt];
-                    res++;
+            while(onePt+twoPt<rsl.length){
+                if(twoPt==right.length){
+                    rsl[onePt+twoPt]=left[onePt];
+                    onePt++;
+                }else if(onePt==left.length){
+                    rsl[onePt+twoPt]=right[twoPt];
                     twoPt++;
-                }else if(twoPt==right.length){
-                    rsl[res]=left[onePt];
-                    res++;
+                } else if(left[onePt]<=right[twoPt]){
+                    rsl[onePt+twoPt]=left[onePt];
                     onePt++;
-                }else if(left[onePt]<=right[twoPt]){
-                    rsl[res]=left[onePt];
-                    onePt++;
-                    res++;
                 }else if(left[onePt]>right[twoPt]){
-                    rsl[res]=right[twoPt];
+                    rsl[onePt+twoPt]=right[twoPt];
                     twoPt++;
-                    res++;
                 }
-            }
         }
         return rsl;
     }
@@ -52,5 +35,3 @@ public class Merge {
             System.out.println(Arrays.toString(rsl));
         }
     }
-
-
