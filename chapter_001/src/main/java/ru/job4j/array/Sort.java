@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Sort {
 
-    public int[] sortin(int[] args){
+    public int[] sortArr(int[] args){
         int tmp;
         for(int i=0;i<args.length-1;i++){
             for(int j=i;j<args.length;j++){
