@@ -6,19 +6,19 @@ public class Max {
         return left > right ? left : right;
     }*/
 
-    public int add(int first, int second) {
+    public int MaxNumber(int first, int second) {
         return Math.max(first, second);
     }
 
-    public int add(int first, int second, int three) {
-        int tmp1 = add(first, second);
-        return add(tmp1, three);
+    public int MaxNumber(int first, int second, int three) {
+        int tmp1 = MaxNumber(first, second);
+        return MaxNumber(tmp1, three);
     }
 
-    public int add(int first, int second, int three, int four) {
-        int tmp1 = add(first, second);
-        int tmp2 = add(three, four);
-        return add(tmp1, tmp2);
+    public int MaxNumber(int first, int second, int three, int four) {
+        int tmp1 = MaxNumber(first, second);
+        int tmp2 = MaxNumber(three, four);
+        return MaxNumber(tmp1, tmp2);
     }
 
 }
